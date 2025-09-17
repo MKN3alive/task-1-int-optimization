@@ -12,3 +12,15 @@ y = 5
 ## Задача
 
 Найти максимальный диапазон целых чисел [-M,N], для которого вышеобозначенное утверждение верно.
+
+UPD: Покопавшись в исходниках CPython (но, к сожалению нашел только в версии 3.10) также были найдены эти диапазоны:
+
+```python
+/* interpreter state */
+
+#define _PY_NSMALLPOSINTS           257
+#define _PY_NSMALLNEGINTS           5
+```
+
+ссылка на исходник: https://github.com/python/cpython/blob/3.10/Include/internal/pycore_interp.h
+(строка 205-206)
